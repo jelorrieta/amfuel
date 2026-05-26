@@ -74,4 +74,9 @@ function crearTabla(data) {
   return table;
 }
 
-cargarBaseDeDatos(1);
+function getDay() {
+  return new Date().getDate();
+}
+
+const dia=getDay();
+cargarBaseDeDatos(dia);
