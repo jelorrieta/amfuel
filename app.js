@@ -1,4 +1,4 @@
-async function cargarBaseDeDatos() {
+async function cargarBaseDeDatos(dia) {
   const contenedor = document.getElementById("contenedor");
 
   try {
@@ -7,21 +7,17 @@ async function cargarBaseDeDatos() {
       locateFile: file =>
         `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/${file}`
     });
-
     // Carga el archivo .db desde el repo
     const response = await fetch("./prices.db");
-
     if (!response.ok) {
-      throw new Error("No se pudo cargar el archivo database.db");
+      throw new Error("No se pudo cargar el archivo prices.db");
     }
-
     const buffer = await response.arrayBuffer();
-
     // Abre la base de datos SQLite
     const db = new SQL.Database(new Uint8Array(buffer));
 
     // Ejecuta query
-    const resultado = db.exec("SELECT * FROM Day1");
+    const resultado = db.exec("SELECT * FROM ${dia}");
 
     if (!resultado.length) {
       contenedor.innerHTML = "<p>No hay datos.</p>";
@@ -78,4 +74,4 @@ function crearTabla(data) {
   return table;
 }
 
-cargarBaseDeDatos();
+cargarBaseDeDatos("Day1");
