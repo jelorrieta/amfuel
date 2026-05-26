@@ -1,1 +1,42 @@
+<!-- archivo: index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQLite Viewer</title>
 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    th {
+      background: #f0f0f0;
+    }
+
+    td, th {
+      padding: 8px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Contenido Base de Datos</h1>
+
+  <div id="contenedor"></div>
+
+  <!-- sql.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js"></script>
+
+  <!-- tu js -->
+  <script src="./app.js"></script>
+
+</body>
+</html>
