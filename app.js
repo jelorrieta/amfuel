@@ -17,7 +17,7 @@ async function cargarBaseDeDatos(dia) {
     const db = new SQL.Database(new Uint8Array(buffer));
 
     // Ejecuta query
-    const resultado = db.exec("SELECT * FROM ${dia}");
+    const resultado = db.exec(`SELECT * FROM ${dia}`);
 
     if (!resultado.length) {
       contenedor.innerHTML = "<p>No hay datos.</p>";
