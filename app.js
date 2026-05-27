@@ -75,7 +75,7 @@ function crearTabla(data) {
 }
 
 function getDay() {
-  return new Date().getDate();
+  return new Date().getUTCDate();
 }
 
 const dia=getDay();
