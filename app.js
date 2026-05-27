@@ -63,6 +63,10 @@ function crearTabla(data) {
     fila.forEach(valor => {
       const td = document.createElement("td");
       td.textContent = valor;
+      
+      if (valor >= 50 && valor <= 1000) {
+        td.classList.add("barato");
+      }
       tr.appendChild(td);
     });
 
